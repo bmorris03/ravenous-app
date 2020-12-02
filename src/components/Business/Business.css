@@ -25,8 +25,13 @@
   
   .Business-information p {
     font-size: .88rem;
-    font-weight: 300;
     line-height: 1rem;
+  }
+
+  .Business-information a.google-link {
+    color: #770e12;
+    text-decoration: none;
+    font-weight: bold;
   }
   
   .Business-address {
@@ -43,7 +48,6 @@
   }
   
   .Business-reviews h3 {
-    color: #3a0608;
     font-weight: 600;
   }
   

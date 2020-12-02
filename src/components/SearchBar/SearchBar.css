@@ -10,7 +10,7 @@
   }
 
   .SearchBar-sort-options {
-    background: rgba(58,6,8,0.7);
+    background: rgba(119,14,18,0.7);
     width: 50%;
     margin: 0 auto;
     padding-top: 2rem;
@@ -74,7 +74,7 @@
   .SearchBar-submit a {
     border-radius: 4px;
     padding: .72rem 1.7rem;
-    background-color: #3a0608;
+    background-color: #770e12;
     color: #ffffff;
     font-weight: 600;
     transition: background-color .5s;

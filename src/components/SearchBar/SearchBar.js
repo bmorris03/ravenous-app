@@ -15,11 +15,13 @@ class SearchBar extends React.Component {
     this.sortByOptions = {
       'Best Match': 'best_match',
       'Highest Rated': 'rating',
-      'Most Reviewed': 'review_count'
+      'Most Reviewed': 'review_count',
+      'Distance From': 'distance'
     }
     this.handleTermChange = this.handleTermChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   getSortByClass(sortByOption) {
@@ -31,8 +33,10 @@ class SearchBar extends React.Component {
   }
 
   handleSortByChange(sortByOption) {
-    this.setState({
-      sortBy: sortByOption
+    this.setState({ sortBy: sortByOption }, () => {
+      if (this.state.term && this.state.location) {
+        this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+      }
     });
   }
 
@@ -57,6 +61,13 @@ class SearchBar extends React.Component {
     event.preventDefault();
   }
 
+  handleKeyPress(event) {
+    //trigger search on 'enter' key press
+    if (event.keyCode === 13) {
+      document.getElementById('search').click();
+    }
+  }
+
   renderSortByOptions() {
     return Object.keys(this.sortByOptions).map(sortByOption => {
       let sortByOptionValue = this.sortByOptions[sortByOption];
@@ -73,10 +84,10 @@ class SearchBar extends React.Component {
           </ul>
         </div>
         <div className="SearchBar-fields">
-          <input placeholder="Search Businesses" onChange={this.handleTermChange} />
-          <input placeholder="Where?" onChange={this.handleLocationChange} />
+          <input placeholder="Search Businesses" onChange={this.handleTermChange} onKeyDown={this.handleKeyPress} />
+          <input placeholder="Where?" onChange={this.handleLocationChange} onKeyDown={this.handleKeyPress} />
         </div>
-        <div className="SearchBar-submit" onClick={this.handleSearch}>
+        <div id="search" className="SearchBar-submit" onClick={this.handleSearch}>
           <a>Let's Go</a>
         </div>
       </div>
