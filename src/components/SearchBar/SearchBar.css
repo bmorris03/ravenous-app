@@ -2,17 +2,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url('./background_search_desktop.webp');
+    background-image: url('./ravenous-bg.jpg');
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 25rem;
   }
+
+  .SearchBar-sort-options {
+    background: rgba(58,6,8,0.7);
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
   
   .SearchBar-sort-options ul {
     display: flex;
     justify-content: center;
-    margin-bottom: 2.22rem;
-    color: #ffffff;
+    margin-bottom: 2rem;
+    color: #fff;
   }
   
   .SearchBar-sort-options li {
@@ -64,7 +74,7 @@
   .SearchBar-submit a {
     border-radius: 4px;
     padding: .72rem 1.7rem;
-    background-color: #cca353;
+    background-color: #3a0608;
     color: #ffffff;
     font-weight: 600;
     transition: background-color .5s;
@@ -75,14 +85,22 @@
     background-color: #a7874b;
   }
   
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 760px) {
     .SearchBar {
-      background-image: url('./background_search_mobile.webp');
+      background-image: url('./ravenous-bg-mobile.jpg');
     }
+
+    .SearchBar-sort-options {
+      width: 90%;
+  }
   
     .SearchBar-sort-options ul {
       margin-left: 2rem;
       margin-right: 2rem;
+    }
+
+    .SearchBar-sort-options li {
+      padding: 0 1rem;
     }
   
     .SearchBar-fields {

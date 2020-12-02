@@ -1,5 +1,5 @@
 //Yelp API information - sensitive info removed
-const apiKey = '';
+const apiKey = '5p91AmlVSKcMLamalJ7v0jtiMLgVn_BGF9yNi3ahSmzTmw2esayunwZ2qdogrgA2hqkTP4y25dg3_dHYDZHvDGzHW_KRtoZREDMFKoWI-vNNBPFYhSUmzVl6wWO4X3Yx';
 
 const Yelp = {
   //search Yelp API with given parameters
